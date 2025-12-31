@@ -1,5 +1,3 @@
-const { generateUtilityClass } = require("@mui/material");
-
 // --- DATOS DE PRODUCTOS ---
 const products = [
     {
@@ -440,7 +438,6 @@ const products = [
         price: 18.00,
         desc: "Una primavera golpeada por una pandemia. A Hibiki, que regenta el bar Blue Moment, cada vez le cae mejor Naoto, un cliente habitual. Sin embargo, cuanto más se estrecha su relación, más culpable se siente Hibiki por su novio, Seiji. \n¡Michi Ichiho e ymz nos traen este emocionante triángulo amoroso a merced de un contexto sin precedentes!",
         image: "images/bl/blue_moment.jpg"
-        
     },
 ];
 
