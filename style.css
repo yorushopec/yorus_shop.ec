@@ -1,0 +1,282 @@
+/* --- Variables de Color Pastel --- */
+:root {
+    --primary-yellow: #f9f3d1;
+    /* Amarillo Mantequilla */
+    --primary-orange: #f0bc21;
+    /* Naranja Pastel */
+    --primary-footer: #9a2609;
+    /* Naranja Pastel */
+    --primary-red: #cf331c;
+    /* Rojo/Coral Pastel */
+    --text-dark: #333333;
+    /* Negro suave */
+    --bg-cream: #FFFDF5;
+    /* Fondo casi blanco */
+    --primary-black: #0c0302;
+}
+
+/* --- Globales --- */
+body {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+}
+
+/* --- Clases personalizadas utilitarias --- */
+.bg-primary-pastel {
+    background-color: var(--primary-orange) !important;
+}
+
+.bg-secondary-pastel {
+    background-color: var(--primary-yellow) !important;
+}
+
+.text-primary-color {
+    color: var(--primary-red) !important;
+}
+
+.text-secondary-color {
+    color: var(--primary-orange) !important;
+}
+
+.bg-footer-color {
+    background-color: var(--primary-footer) !important;
+}
+
+.text-primary-color-footer {
+    color: var(--primary-orange) !important;
+}
+
+/* --- Navbar --- */
+.navbar-brand h1 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-red) !important;
+}
+
+/* --- Hero Section --- */
+.hero-header {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background: linear-gradient(to bottom, var(--primary-yellow), #ffffff);
+}
+
+/* --- Botones Cute --- */
+.btn-primary-custom {
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-orange);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* --- Servicios --- */
+.service-item {
+    padding: 30px;
+    transition: .5s;
+    border: 2px solid transparent;
+    background-color: #f9f5da !important;
+}
+
+.service-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+    border-color: var(--primary-orange);
+    background-color: white !important;
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    background: var(--primary-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-10deg);
+}
+
+/* --- Tarjetas de Productos --- */
+.product-item {
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #f0f0f0;
+    background-color: #fffdf1 !important;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-orange);
+}
+
+.product-img-wrap {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background-color: #eee;
+}
+
+.product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Redes Sociales en Footer --- */
+.btn-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: white;
+    border-color: white;
+}
+
+.btn-social:hover {
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+}
+
+/* Cursor para indicar que se puede hacer zoom */
+#modalImg {
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+
+#modalImg:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo para las miniaturas del modal */
+.gallery-thumb {
+    width: 60px;
+    /* Tamaño pequeño */
+    height: 85px;
+    /* Formato vertical tipo manga */
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    /* Borde invisible base */
+}
+
+.gallery-thumb:hover {
+    transform: translateY(-3px);
+    /* Se levanta un poco */
+    border-color: var(--primary-orange);
+    /* Se pone naranja al pasar el mouse */
+    opacity: 0.8;
+}
+
+/* --- Estilos para controles de cantidad en carrito --- */
+.qty-btn {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* --- Etiqueta de Tipo (Tomo único, En emisión) --- */
+.badge-cute {
+    background-color: var(--primary-black) !important;
+    /* Usa tu color Coral */
+    color: white !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+/* Opcional: Si prefieres que sea Naranja, cambia --primary-red por --primary-orange */
+
+/* --- Botón del Carrito Personalizado --- */
+.btn-cute-outline {
+    color: var(--primary-red);
+    /* Texto y borde color Coral */
+    border: 2px solid var(--primary-red);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-cute-outline:hover {
+    background-color: var(--primary-red);
+    /* Fondo Coral al pasar el mouse */
+    color: white;
+    /* Texto blanco */
+    border-color: var(--primary-red);
+    transform: scale(1.05);
+    /* Pequeño efecto de "pop" */
+}
+
+/* --- Título del Hero con letra Sour Gummy --- */
+.hero-header h1 {
+    font-family: 'Sour Gummy', sans-serif !important;
+    font-weight: 700;
+    /* Puedes cambiar a 600 u 800 si la quieres más fina o gruesa */
+}
+
+/* --- Clase para aplicar la letra Sour Gummy donde quieras --- */
+.letra-cute {
+    font-family: 'Sour Gummy', sans-serif !important;
+    font-weight: 700;
+}
+
+/* --- Botón de Filtro (Estilo Claro/Soft) --- */
+.btn-filter-custom {
+    background-color: white;       /* Fondo blanco igual que el input */
+    color: #6c757d;                /* Texto gris suave */
+    border: none;                  /* Sin bordes extraños */
+    transition: all 0.3s ease;
+    border-left: 1px solid #eee !important; /* Una línea sutil que separa del input */
+}
+
+.btn-filter-custom:hover, 
+.btn-filter-custom:focus, 
+.show > .btn-filter-custom.dropdown-toggle {
+    background-color: var(--primary-yellow); /* Se pone amarillo pastel al tocar */
+    color: var(--text-dark);
+}
+
+/* --- Estilo del Menú Desplegable --- */
+.dropdown-item {
+    padding: 8px 15px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-yellow); /* Hover amarillo pastel */
+    color: var(--primary-black);
+    transform: translateX(5px); /* Pequeña animación de movimiento */
+}
+
+.dropdown-item:active {
+    background-color: var(--primary-orange);
+    color: white;
+}
