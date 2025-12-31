@@ -1,5 +1,6 @@
 // --- ESTADO ---
-let cart = []; // Ahora guardará objetos con propiedad 'qty'
+//let cart = []; // Ahora guardará objetos con propiedad 'qty'
+let cart = JSON.parse(localStorage.getItem('yorusCart')) || [];
 let productModalInstance;
 let imageModalInstance;
 
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderFeatured();
     filterCatalog('all', document.querySelector('.active-filter'));
+    updateCartUI();
 
     document.getElementById('searchInput').addEventListener('keyup', (e) => {
         const text = e.target.value.toLowerCase();
@@ -253,7 +255,7 @@ function toggleCart() {
     offcanvasCart.toggle();
 }
 
-function addToCart(id) {
+/*function addToCart(id) {
     // Verificar si el producto ya existe en el carrito
     const existingItem = cart.find(item => item.id === id);
 
@@ -283,6 +285,39 @@ function changeQty(index, change) {
 
 function removeFromCart(index) {
     cart.splice(index, 1);
+    updateCartUI();
+}*/
+
+function addToCart(id) {
+    const existingItem = cart.find(item => item.id === id);
+
+    if (existingItem) {
+        existingItem.qty++; 
+    } else {
+        const prod = products.find(p => p.id === id);
+        cart.push({ ...prod, qty: 1 });
+        alert(`¡${prod.title} se ha añadido al carrito!`);
+    }
+    
+    saveCartToStorage(); // <--- AGREGA ESTO
+    updateCartUI();
+}
+
+function changeQty(index, change) {
+    if (cart[index].qty + change > 0) {
+        cart[index].qty += change;
+    } else {
+        cart.splice(index, 1);
+    }
+    
+    saveCartToStorage(); // <--- AGREGA ESTO
+    updateCartUI();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    
+    saveCartToStorage(); // <--- AGREGA ESTO
     updateCartUI();
 }
 
@@ -349,4 +384,9 @@ function checkoutInstagram() {
         alert("¡Pedido copiado! Te redirigimos al DM de Instagram.");
         window.open(`https://www.instagram.com/${instagramUser}/`, '_blank');
     });
+}
+
+// --- FUNCIÓN PARA GUARDAR EN MEMORIA ---
+function saveCartToStorage() {
+    localStorage.setItem('yorusCart', JSON.stringify(cart));
 }

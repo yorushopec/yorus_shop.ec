@@ -90,6 +90,7 @@ body {
     transition: .5s;
     border: 2px solid transparent;
     background-color: #f9f5da !important;
+    height: 100%;
 }
 
 .service-item:hover {
