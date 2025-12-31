@@ -148,7 +148,7 @@ const products = [
     },
     {
         id: 10,
-        title: "BLUE LOCK",
+        title: "BLUE LOCK: EPISODE NAGI",
         category: "manga",
         et_filt: "spokon",
         genre: "Manga",
