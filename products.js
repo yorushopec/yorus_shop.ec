@@ -1,3 +1,5 @@
+const { generateUtilityClass } = require("@mui/material");
+
 // --- DATOS DE PRODUCTOS ---
 const products = [
     {
@@ -349,7 +351,7 @@ const products = [
         type: "En emisión › 1 tomo",
         language: "ESP",
         price: 20.00,
-        desc: "Tengo un hermano menor desde que mi papá volvió a casarse. Es un chico demasiado lindo y es REEE de mi tipo, y eso me tiene preocupado. Quise tomar distancia para no enamorarme mucho más de lo que ya estoy. Pero un día, Motoya me arrinconó y me dijo “¿YO TE GUSTO?”. \nDespués de eso comenzamos a tener una relación demasiado “íntima”, pero no es lo que quiero… \n¿Hasta cuándo voy a poder resistirme a los acercamientos tan sexys y directos de parte de mi nuevo hermano menor?",
+        desc: "Han pasado seis meses desde que Kumazawa, el mecánico de autos melancólico, se mudó al lado de Koichi, un youtuber que dice ser un experto en el amor. Tras demasiadas grabaciones a todo volumen, Kumazawa finalmente pierde la paciencia y se presenta en la puerta de Koichi... ¡solo para callarlo con un beso apasionado!",
         image: "images/bl/no_hechos_novios_1.jpg",
         gallery: [
             "images/bl/no_hechos_novios_1.jpg",
@@ -391,7 +393,55 @@ const products = [
         desc: "La posada Gato Calicó, donde trabaja el joven dragón Kokufu, es famosa entre los yokai por su fantástico menú. Ryoya, un zorro codicioso que vive en la posada desde hace mucho tiempo, se pasa los días importunándolo. Un día, Ryoya encuentra en un mercado de antigüedades un viejo retrato japonés que llevaba años buscando, pero, justo cuando decide hablar con el vendedor, resulta que alguien se le adelanta: un general demonio. \nCuando Kokufu se entera de que Ryoya lleva cien años deseando reencontrarse con el pintor del cuadro, decide dejar a un lado sus diferencias y echarle una mano. Juntos, se dirigen a la mansión del demonio, pero ¿quién sabe qué les depara el destino?",
         image: "images/bl/mi_amor_secreto.jpg"
     },
-
+    {
+        id: 27,
+        title: "HOME FAR AWAY",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 20.00,
+        desc: "Años 90. Estados Unidos. \nAlain Saverio es un joven que vive muerto por dentro junto a sus padres religiosos ultraconservadores. Un día conoce a Hayden, un joven por quien al instante siente una fuerte atracción; pero se entera de que lleva una vida errante y no suele quedarse mucho tiempo en un mismo lugar. \nPara estar juntos, no le queda otra opción que huir de su casa. Pero eso convierte a Hayden en un secuestrador. Aun así, éste decide llevarse a Alain lo más lejos posible para sacarlo del infierno en el que vive. \nPara muchos, las huellas de su coche marcan una ruta de escape. Pero para ellos no es más que el camino de regreso hacia “un hogar sólo para ellos dos”.",
+        image: "images/bl/home_far_away.jpg"
+    },
+    {
+        id: 28,
+        title: "10 COSAS QUE QUIERO HACER ANTES DE LOS 40",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 20.00,
+        desc: "Suzume prácticamente ha tirado la toalla en el amor después de pasar más de diez años sin pareja... Ya solo le quedan tres meses para cumplir los 40. Entonces, escribe una lista secreta: “10 cosas que quiero hacer antes de los 40”, que incluye deseos como: “hacer una fiesta de takoyaki”, “comerme un parfait”, “celebrar mi cumpleaños con mi pareja”... Pero todo se complica cuando un subordinado del trabajo que es diez años más joven que él descubre la lista... ¡y se empeña en cumplir todos los objetivos con él!",
+        image: "images/bl/10_cosas_antes_40_1.jpg"
+    },
+    {
+        id: 29,
+        title: "10 COSAS QUE QUIERO HACER ANTES DE LOS 40 — 2 [PREVENTA]",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 20.00,
+        desc: "Tras una década sin pareja, Suzume Tôjô (40 años) por fin vuelve a tener novio. Por si fuera poco, se trata de un guaperas diez años más joven llamado Keishi Tanaka. Ahora mismo, el principal desafío de Suzume es mantener su vida pública separada de la privada. Conscientes de que en cuanto bajan la guardia los dos se dejan llevar por el amor, Keishi y Suzume acuerdan unas cuantas reglas que tendrán que cumplir... El romance entre el jefe y su subordinado continúa... Cada vez más auténtico, cada vez más maduro.",
+        image: "images/bl/10_cosas_antes_40_2.jpg"
+    },
+    {
+        id: 30,
+        title: "BLUE MOMENT",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 18.00,
+        desc: "Una primavera golpeada por una pandemia. A Hibiki, que regenta el bar Blue Moment, cada vez le cae mejor Naoto, un cliente habitual. Sin embargo, cuanto más se estrecha su relación, más culpable se siente Hibiki por su novio, Seiji. \n¡Michi Ichiho e ymz nos traen este emocionante triángulo amoroso a merced de un contexto sin precedentes!",
+        image: "images/bl/blue_moment.jpg"
+        
+    },
 ];
 
 /*
