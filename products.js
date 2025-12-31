@@ -177,7 +177,7 @@ const products = [
         type: "Pines",
         language: "",
         price: 1.50,
-        desc: "Pines con gancho metálico. \nTamaño: 37mm. \nSerie: Heaven Official's Blessing. \nPersonajes: Hua Cheng & Xie Lian. \nSe venden por par.",
+        desc: "Pines con gancho metálico. \nTamaño: 37mm. \nSerie: Heaven Official's Blessing. \nPersonajes: Hua Cheng & Xie Lian. \nSe venden por par. \n\n*Las imágenes mostradas son solo para referencia. El resultado final puede variar.",
         image: "images/merch/pines_tgcf_37mm_1.png"
     },
     {
@@ -189,7 +189,7 @@ const products = [
         type: "Pines",
         language: "",
         price: 1.50,
-        desc: "Pines con gancho metálico. \nTamaño: 37mm. \nSerie: South Park. \nPersonajes: Cartman & Kyle. \nSe venden por par.",
+        desc: "Pines con gancho metálico. \nTamaño: 37mm. \nSerie: South Park. \nPersonajes: Cartman & Kyle. \nSe venden por par. \n\n*Las imágenes mostradas son solo para referencia. El resultado final puede variar.",
         image: "images/merch/pines_sp_kyman_1.png",
         gallery: [
             "images/merch/pines_sp_kyman_1.png",
@@ -438,6 +438,110 @@ const products = [
         price: 18.00,
         desc: "Una primavera golpeada por una pandemia. A Hibiki, que regenta el bar Blue Moment, cada vez le cae mejor Naoto, un cliente habitual. Sin embargo, cuanto más se estrecha su relación, más culpable se siente Hibiki por su novio, Seiji. \n¡Michi Ichiho e ymz nos traen este emocionante triángulo amoroso a merced de un contexto sin precedentes!",
         image: "images/bl/blue_moment.jpg"
+    },
+    {
+        id: 31,
+        title: "¡¡NO TE RINDAS, NAKAMURA!!",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 19.00,
+        desc: "Nakamura está pillado por un compañero de clase, el alegre Hirose, pero dada su timidez jamás ha hablado con él. Después de un año observándole desde la lejanía, se propone hacerlo e imagina cómo podría lograrlo: un encuentro casual, una pregunta inocente, meterse en una conversación en grupo... Desgraciadamente, sus intentos fracasan uno tras otro de manera cómica. Aun así, Nakamura no se rinde. ¿Llegará el día en el que pueda hablar con Hirose? Si lo consigue, quién sabe, tal vez pueda llegar hasta su corazón.",
+        image: "images/bl/no_rindas_nakamura.jpg"
+    },
+    {
+        id: 32,
+        title: "¡¡NO TE RINDAS, NAKAMURA!!",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Finalizada › 2 tomos",
+        language: "ESP",
+        price: 19.00,
+        desc: "Nakamura está pillado por un compañero de clase, el alegre Hirose, pero dada su timidez jamás ha hablado con él. Después de un año observándole desde la lejanía, se propone hacerlo e imagina cómo podría lograrlo: un encuentro casual, una pregunta inocente, meterse en una conversación en grupo... Desgraciadamente, sus intentos fracasan uno tras otro de manera cómica. Aun así, Nakamura no se rinde. ¿Llegará el día en el que pueda hablar con Hirose? Si lo consigue, quién sabe, tal vez pueda llegar hasta su corazón. \n¡Esta popular comedia romántica vuelve en una nueva edición!",
+        image: "images/bl/no_te_rindas_nakamura_1.jpg",
+        gallery: [
+            "images/bl/no_te_rindas_nakamura_1.jpg",
+            "images/bl/no_te_rindas_nakamura_2.jpg",
+        ]
+    },
+    {
+        id: 33,
+        title: "UNA PAREJA SIN CITAS",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 20.00,
+        desc: "Kiichi Amakasu, un chico gay, vive con su mejor amigo, Ryûnosuke Shibata, un chico hetero. Llevan tres años cuidando juntos a Mako, la sobrina de Ryûnosuke, y poco a poco se han ido convirtiendo en una familia. Sin embargo, Kiichi guarda un gran secreto: hace tiempo que está enamorado de Ryûnosuke. Por el bien de Mako, Kiichi ha estado ocultando sus sentimientos, pero en una noche de borrachera, saltarán chispas entre los dos…",
+        image: "images/bl/una_pareja_sin_citas.jpg"
+    },
+    {
+        id: 34,
+        title: "MACARRA EN APUROS, ¡EL DINERO NO SE DEVUELVE SOLO!",
+        category: "manga",
+        et_filt: "bl",
+        genre: "Manga",
+        type: "Tomo único",
+        language: "ESP",
+        price: 20.00,
+        desc: "El macarra Ryuji Arikawa es salvado en una pelea por un chico misterioso. Como nuestro delincuente no tiene un duro pero es buena persona, acepta cualquier trabajo para mostrar su gratitud. Lo que no sabes es que su salvador se dedica a la actuación en películas para adultos, y casualmente busca un compañero para participar en su última película. Tras varios sucesos, Ryuji, lejos de zanjar el asunto, se mete de lleno en una deuda mayor, lo que hace que tenga que trabajar para devolverle el dinero prestado.",
+        image: "images/bl/macarra_en_apuros.jpg"
+    },
+    {
+        id: 35,
+        title: "ALMOHADITAS PERSONALIZADAS",
+        category: "merch",
+        et_filt: "",
+        genre: "Merch",
+        type: "Almohaditas",
+        language: "",
+        price: 7.00,
+        desc: "Almohaditas tipo llavero. \nTamaño: Entre 15-20 cm aproximadamente (varía según el diseño). \nPersonajes personalizados. \n75% poliéster, 20% algodón y 5% elastano. \nDescuento del 10% a partir de 2 unidades. \n\n*Las imágenes mostradas son solo para referencia. El resultado final puede variar.",
+        image: "images/merch/almohaditas.png",
+        gallery: [
+            "images/merch/almohaditas.png",
+            "images/merch/almohaditas_1.png",
+            "images/merch/almohaditas_2.png",
+            "images/merch/almohaditas_3.png",
+            "images/merch/almohaditas_4.png",
+            "images/merch/almohaditas_5.png",
+            "images/merch/almohaditas_6.png",
+        ]
+    },
+    {
+        id: 36,
+        title: "EL LOBO Y EL CACHORRO",
+        category: "manhua",
+        et_filt: "bl",
+        genre: "Manhua",
+        type: "En emisión › 1 tomo",
+        language: "ESP",
+        price: 30.00,
+        desc: "Esta es la enternecedora historia sobre un lobo, líder de su manada y su encuentro con un pequeño cachorro al que por casualidades del destino decidirá cuidar. ¿Cómo cambiará la vida del joven lobo a raíz de esto? \nDescúbrelo en este precioso manhua repleto de maravillosas ilustraciones y un arte espectacular que además te ablandará el corazón de principio a fin.",
+        image: "images/bl/el_lobo_y_cachorro_1.jpg",
+        gallery: [
+            "images/bl/el_lobo_y_cachorro_1.jpg"
+        ]
+    },
+    {
+        id: 37,
+        title: "EL CHICO QUE ME GUSTA NO ES UN CHICO",
+        category: "manga",
+        et_filt: "gl",
+        genre: "Manga",
+        type: "En emisión › 2 tomos",
+        language: "ESP",
+        price: 25.00,
+        desc: "Aya es una gyaru amante de la música que se ha enamorado perdidamente del dependiente de la tienda de discos que frecuenta. Él siempre va vestido de negro, es muy amable y tiene un aire molón que ha conquistado el corazón de la joven. \nLo que Aya no sabe es que ese chico, ¡es en realidad una chica! ¡Y no solo eso, sino que encima es su compañera de clase Mitsuki, que se sienta a su lado! Esta quiere aclarar el malentendido lo antes posible, pero parece que nunca encuentra el momento adecuado, así que la relación entre ellas se hace más cercana tanto en la tienda de discos como en el instituto.",
+        image: "images/gl/chico_no_chico_1.jpg",
+        gallery: [
+            "images/gl/chico_no_chico_1.jpg",
+            "images/gl/chico_no_chico_2.jpg"
+        ]
     },
 ];
 
