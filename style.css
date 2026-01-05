@@ -15,12 +15,34 @@
     --primary-black: #0c0302;
 }
 
-/* --- Globales --- */
 body {
     font-family: 'Fredoka', sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-cream);
+} 
+
+/* --- FONDO MÁGICO UNIFICADO (NUEVAS ESTRELLAS CUTE) --- 
+body {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-cream);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24'%3E%3Cpath fill='%23eaddca' d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/%3E%3C/svg%3E");
+    background-size: 50px 50px; /* Estrellas un poco más grandes 
+    background-repeat: repeat;
+    animation: magicStarFloat 40s linear infinite;
 }
+
+@keyframes magicStarFloat {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px; /* Se mueve 
+    }
+}
+    */
 
 /* --- Clases personalizadas utilitarias --- */
 .bg-primary-pastel {
@@ -280,4 +302,58 @@ body {
 .dropdown-item:active {
     background-color: var(--primary-orange);
     color: white;
+}
+
+/* --- MASCOTA QUE CRUZA LA PANTALLA --- */
+.welcome-mascot {
+    position: fixed; 
+    bottom: 20px;    
+    left: -200px;   
+    z-index: 9999;  
+    width: 150px;    
+    pointer-events: none; 
+    
+    /* La animación: dura 12 segundos, es suave y solo ocurre 1 vez */
+    animation: walkAcross 12s linear forwards; 
+}
+
+.welcome-mascot img {
+    width: 100%;
+    height: auto;
+    /* Efecto de rebote/flote interno */
+    animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes walkAcross {
+    0% {
+        left: -200px; 
+    }
+    10% {
+        left: 20px; 
+    }
+    80% {
+        left: 80%; 
+        opacity: 1;
+    }
+    100% {
+        left: 110%; 
+        opacity: 0; 
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0) rotate(-5deg);
+    }
+    to {
+        transform: translateY(-15px) rotate(5deg); 
+    }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    .welcome-mascot {
+        width: 100px; 
+        bottom: 10px; 
+    }
 }

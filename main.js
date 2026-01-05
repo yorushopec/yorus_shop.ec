@@ -4,11 +4,12 @@ let cart = JSON.parse(localStorage.getItem('yorusCart')) || [];
 let productModalInstance;
 let imageModalInstance;
 
-// --- INICIALIZACIÓN ---
+// INICIALIZACIÓN
 document.addEventListener('DOMContentLoaded', () => {
     productModalInstance = new bootstrap.Modal(document.getElementById('productModal'));
     imageModalInstance = new bootstrap.Modal(document.getElementById('imageModal'));
 
+    shuffleArray(products);
     renderFeatured();
     filterCatalog('all', document.querySelector('.active-filter'));
     updateCartUI();
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }*/
 
-// --- SISTEMA DE VISTAS (CORREGIDO) ---
+// SISTEMA DE VISTAS
 function showView(viewName, filterCategory = 'all') {
     const homeView = document.getElementById('home-view');
     const catalogView = document.getElementById('catalog-view');
@@ -247,7 +248,7 @@ function openFullImage(src) {
     imageModalInstance.show();
 }
 
-// --- LÓGICA DEL CARRITO (NUEVA: CANTIDADES) ---
+// LÓGICA DEL CARRITO (NUEVA: CANTIDADES)
 
 const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('cartOffcanvas'));
 
@@ -386,7 +387,15 @@ function checkoutInstagram() {
     });
 }
 
-// --- FUNCIÓN PARA GUARDAR EN MEMORIA ---
+//  FUNCIÓN PARA GUARDAR EN MEMORIA 
 function saveCartToStorage() {
     localStorage.setItem('yorusCart', JSON.stringify(cart));
+}
+
+// FUNCIÓN PARA BARAJEAR SALIDAS
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Intercambia elementos
+    }
 }
