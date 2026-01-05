@@ -1,17 +1,11 @@
 /* --- Variables de Color Pastel --- */
 :root {
     --primary-yellow: #f9f3d1;
-    /* Amarillo Mantequilla */
     --primary-orange: #f0bc21;
-    /* Naranja Pastel */
     --primary-footer: #9a2609;
-    /* Naranja Pastel */
     --primary-red: #cf331c;
-    /* Rojo/Coral Pastel */
     --text-dark: #333333;
-    /* Negro suave */
     --bg-cream: #FFFDF5;
-    /* Fondo casi blanco */
     --primary-black: #0c0302;
 }
 
@@ -191,24 +185,18 @@ body {
     transform: scale(1.02);
 }
 
-/* Estilo para las miniaturas del modal */
 .gallery-thumb {
     width: 60px;
-    /* Tamaño pequeño */
     height: 85px;
-    /* Formato vertical tipo manga */
     object-fit: cover;
     cursor: pointer;
     transition: all 0.2s ease;
     border: 2px solid transparent;
-    /* Borde invisible base */
 }
 
 .gallery-thumb:hover {
     transform: translateY(-3px);
-    /* Se levanta un poco */
     border-color: var(--primary-orange);
-    /* Se pone naranja al pasar el mouse */
     opacity: 0.8;
 }
 
@@ -232,15 +220,12 @@ body {
     font-weight: 500;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
 }
 
-/* Opcional: Si prefieres que sea Naranja, cambia --primary-red por --primary-orange */
 
 /* --- Botón del Carrito Personalizado --- */
 .btn-cute-outline {
     color: var(--primary-red);
-    /* Texto y borde color Coral */
     border: 2px solid var(--primary-red);
     background-color: transparent;
     transition: all 0.3s ease;
@@ -248,40 +233,34 @@ body {
 
 .btn-cute-outline:hover {
     background-color: var(--primary-red);
-    /* Fondo Coral al pasar el mouse */
     color: white;
-    /* Texto blanco */
     border-color: var(--primary-red);
     transform: scale(1.05);
-    /* Pequeño efecto de "pop" */
 }
 
 /* --- Título del Hero con letra Sour Gummy --- */
 .hero-header h1 {
     font-family: 'Sour Gummy', sans-serif !important;
     font-weight: 700;
-    /* Puedes cambiar a 600 u 800 si la quieres más fina o gruesa */
 }
 
-/* --- Clase para aplicar la letra Sour Gummy donde quieras --- */
 .letra-cute {
     font-family: 'Sour Gummy', sans-serif !important;
     font-weight: 700;
 }
 
-/* --- Botón de Filtro (Estilo Claro/Soft) --- */
 .btn-filter-custom {
-    background-color: white;       /* Fondo blanco igual que el input */
-    color: #6c757d;                /* Texto gris suave */
-    border: none;                  /* Sin bordes extraños */
+    background-color: white;       
+    color: #6c757d;                
+    border: none;                  
     transition: all 0.3s ease;
-    border-left: 1px solid #eee !important; /* Una línea sutil que separa del input */
+    border-left: 1px solid #eee !important; 
 }
 
 .btn-filter-custom:hover, 
 .btn-filter-custom:focus, 
 .show > .btn-filter-custom.dropdown-toggle {
-    background-color: var(--primary-yellow); /* Se pone amarillo pastel al tocar */
+    background-color: var(--primary-yellow); 
     color: var(--text-dark);
 }
 

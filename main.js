@@ -1,4 +1,4 @@
-// --- ESTADO ---
+// ESTADO 
 //let cart = []; // Ahora guardará objetos con propiedad 'qty'
 let cart = JSON.parse(localStorage.getItem('yorusCart')) || [];
 let productModalInstance;
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- SISTEMA DE VISTAS ---
+//SISTEMA DE VISTAS 
 /*function showView(viewName, filterCategory = 'all') {
     const homeView = document.getElementById('home-view');
     const catalogView = document.getElementById('catalog-view');
@@ -54,16 +54,13 @@ function showView(viewName, filterCategory = 'all') {
     const catalogView = document.getElementById('catalog-view');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Scroll arriba suave
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Actualizar menú activo del navbar
     navLinks.forEach(link => link.classList.remove('active'));
 
     if (viewName === 'home') {
         homeView.classList.remove('d-none');
         catalogView.classList.add('d-none');
-        // Marcar enlace de Inicio como activo
         const homeLink = document.querySelector('.nav-link[onclick*="home"]');
         if(homeLink) homeLink.classList.add('active');
 
@@ -71,16 +68,11 @@ function showView(viewName, filterCategory = 'all') {
         homeView.classList.add('d-none');
         catalogView.classList.remove('d-none');
         
-        // --- AQUÍ ESTABA EL ERROR ---
         if(filterCategory !== 'all') {
-            // Caso 1: Clic en "Mangas", "Merch", etc.
             const btn = Array.from(document.querySelectorAll('#catalog-view button'))
                 .find(b => b.textContent.toLowerCase().includes(filterCategory));
             filterCatalog(filterCategory, btn);
         } else {
-            // Caso 2: Clic en "Catálogo" (Todo)
-            // CORRECCIÓN: Buscamos específicamente el botón que dice "Todo"
-            // (Antes buscábamos el primero y agarraba el de Filtros por error)
             const btnAll = Array.from(document.querySelectorAll('#catalog-view button'))
                 .find(b => b.textContent.trim() === 'Todo'); 
             
@@ -89,7 +81,7 @@ function showView(viewName, filterCategory = 'all') {
     }
 }
 
-// --- RENDERIZADO ---
+// RENDERIZADO
 function renderFeatured() {
     const grid = document.getElementById('featuredGrid');
     grid.innerHTML = '';
@@ -99,7 +91,7 @@ function renderFeatured() {
     });
 }
 
-// --- FILTRAR CATÁLOGO ---
+// FILTRAR CATÁLOGO
 function filterCatalog(category, btnElement, filterValue = '') {
     const grid = document.getElementById('catalogGrid');
     grid.innerHTML = '';
@@ -123,7 +115,7 @@ function filterCatalog(category, btnElement, filterValue = '') {
         btnElement.classList.add('btn-dark', 'active-filter');
     }
 
-    // 2. FILTRADO DE DATOS
+    // FILTRADO DE DATOS
     let filtered = products;
 
     if (category === 'search') {
@@ -207,7 +199,7 @@ function createProductCard(prod) {
     return col;
 }
 
-// --- MODALES ---
+// MODALES 
 function openModal(id) {
     const prod = products.find(p => p.id === id);
 
@@ -300,7 +292,7 @@ function addToCart(id) {
         alert(`¡${prod.title} se ha añadido al carrito!`);
     }
     
-    saveCartToStorage(); // <--- AGREGA ESTO
+    saveCartToStorage(); 
     updateCartUI();
 }
 
@@ -311,19 +303,18 @@ function changeQty(index, change) {
         cart.splice(index, 1);
     }
     
-    saveCartToStorage(); // <--- AGREGA ESTO
+    saveCartToStorage(); 
     updateCartUI();
 }
 
 function removeFromCart(index) {
     cart.splice(index, 1);
     
-    saveCartToStorage(); // <--- AGREGA ESTO
+    saveCartToStorage(); 
     updateCartUI();
 }
 
 function updateCartUI() {
-    // Actualizar badge (suma de todas las cantidades)
     const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
     document.getElementById('cartCountBadge').innerText = totalItems;
 

@@ -662,6 +662,79 @@ const products = [
             "images/bl/sotus_3.jpg"
         ]
     },
+    {
+        id: 44,
+        title: "AOHA RIDE",
+        category: "manga",
+        et_filt: "shojo",
+        genre: "Manga",
+        type: "Finalizada › 13 tomos",
+        language: "ESP",
+        price: 13.00,
+        desc: "Aoha Ride (también conocida como Ao Haru Ride) muestra las vicisitudes de la vida en el colegio: la amistad, la dificultad de entablar relaciones con otros compañeros con personalidades distintas, el primer amor… mediante la emotiva historia que protagonizan Futaba y Kou. \n\nFutaba Yoshioka por fin dejó la secundaria baja atrás. Y con ella a Kou Tanaka, un chico bajito, tranquilo y dulce… el único que pudo robarle el corazón, y que, además, parecía corresponderle. Sin embargo, a causa de una serie de malentendidos y percances, Futaba no pudo transmitirle sus sentimientos a Kou y su relación no pudo llegar a florecer. Además, por si esto no fuese suficientemente duro para ella, estaba totalmente marginada por el resto de chicas de su clase a causa de su belleza y su timidez, de modo que decide que haber terminado la secundaria baja es la excusa perfecta para darle un giro de 180º a su vida. \n\nAhora, en secundaria alta, se dispone a ser una chica lo menos femenina posible para así evitar nuevos problemas y conseguir amigas. Su plan parece funcionar a la perfección, hasta que un día coincide con un chico llamado Kou Mabuchi… ¡¡quien no es otro que el mismo Kou Tanaka, del que Futaba estuvo enamorada!! Kou le confiesa a Futaba que realmente sentía algo por ella cuando estaban en secundaria, pero le dice que todo eso ya es parte del pasado. ¿Será posible que, años después, vuelva a surgir la llama de un romance que ni siquiera tuvo oportunidad de ser iniciado? \n\nUna apasionante serie de 13 tomos que se ha convertido en uno de los shojo más exitosos de la década. Ivrea publica Aoha Ride en el mismo formato que la edición original japonesa: formato tankoubon chico con sobrecubierta.",
+        image: "images/shojo/aoha_1.jpg",
+        gallery: [
+            "images/shojo/aoha_1.jpg",
+            "images/shojo/aoha_2.jpg",
+            "images/shojo/aoha_3.jpg",
+            "images/shojo/aoha_4.jpg",
+            "images/shojo/aoha_5.jpg",
+            "images/shojo/aoha_6.jpg",
+            "images/shojo/aoha_7.jpg",
+            "images/shojo/aoha_8.jpg",
+            "images/shojo/aoha_9.jpg",
+            "images/shojo/aoha_10.jpg",
+            "images/shojo/aoha_11.jpg",
+            "images/shojo/aoha_12.jpg",
+            "images/shojo/aoha_13.jpg",
+        ]
+    },
+    {
+        id: 45,
+        title: "OMORI",
+        category: "manga",
+        et_filt: "gore",
+        genre: "Manga",
+        type: "En emisión › 1 tomo",
+        language: "ESP",
+        price: 20.00,
+        desc: "Sunny es un chico que lleva cuatro años encerrado en casa debido a un incidente. En busca de un nuevo comienzo, va a mudarse de Pueblo Lejano, el lugar donde nació y creció. \n\nTres días antes de partir, Kel, su amigo de la infancia, lo invita a pasar el rato con él una última vez, pero el mundo exterior ha cambiado en los cuatro años que llevan sin verse y el reencuentro con sus antiguos amigos resulta desastroso. \n\nUna serie de acontecimientos tan casuales como inevitables terminarán despertando un pasado enterrado.",
+        image: "images/gore/omori_1.jpg",
+        gallery: [
+            "images/gore/omori_1.jpg"
+        ]
+    },
+    {
+        id: 46,
+        title: "MY BIAS IS SHOWING?!",
+        category: "manhwa",
+        et_filt: "bl",
+        genre: "Manhwa",
+        type: "En emisión › 1 tomo",
+        language: "EN",
+        price: 33.00,
+        desc: "When his school becomes the filming location for a new show starring his favorite idol, one teacher is tasked with toning down his simping! From the author of BL romance manhwa Hold Me Tight and the artist behind the steamy BL comedy manhwa Pleasure Principle! \n\nHigh school teacher Na Aejoon has a secret obsession. He’s a total simp for the handsome Choi Siyeol from the popular idol group, A-One! Na Aejoon is so enamored with Siyeol that even his weekends are devoted to fanboying over—and dreaming about—the pop star. While he’d give anything to meet Siyeol even once in his lifetime, he’s accepted the fact that it’s not going to happen one day. Until it does. \n\nCast in a variety show, Siyeol is slated to be at Aejoon’s school for filming. And what’s better than seeing his idol every day? Catching his attention! Suddenly cast as Siyeol’s co-star, Aejoon must put on the ultimate act: not showing his rabid fan side, lest he creep Siyeol out. But as the two grow closer, keeping secrets will become more of a challenge—for both of them.",
+        image: "images/bl/bias_showing_1.jpg",
+        gallery: [
+            "images/bl/bias_showing_1.jpg"
+        ]
+    },
+    {
+        id: 47,
+        title: "DEBUT OR DIE",
+        category: "manhwa",
+        et_filt: "fantasy",
+        genre: "Manhwa",
+        type: "En emisión › 2 tomos",
+        language: "DE",
+        price: 32.00,
+        desc: "[DESCRIPCIÓN ORIGINAL EN ALEMÁN] \n\nNachdem er durch die Beamtenprüfung fällt, ertränkt Geonwu Ryu seinen Kummer im Alkohol. Doch als er wieder aufwacht, ist er plötzlich nicht mehr derselbe: Er steckt nun im Körper eines jungen Mannes namens Moondae Park! Und dann erscheint auch noch ein Statusfenster mit einer Mission für ihn: Mach dein Debut als Idol … oder stirb! \n\nJetzt hat Moondae ein Jahr Zeit, um den Durchbruch zu schaffen. Zum Glück ergattert er einen Platz in der beliebten Survival Show „Idol Inc.“. Doch das Business ist hart und die Konkurrenz stark. Wird es ihm gelingen, dem Tod zu entrinnen? \n\n[DESCRIPCIÓN TRADUCIDA AL ESPAÑOL] \n\nTras suspender su examen de servicio civil, Geonwu Ryu ahoga sus penas en alcohol. Pero al despertar, de repente ya no es el mismo: ¡ahora está en el cuerpo de un joven llamado Moondae Park! Y entonces aparece una ventana de estado con una misión para él: ¡Debutar como ídolo... o morir! \n\nAhora Moondae tiene un año para triunfar. Por suerte, consigue un puesto en el popular programa de supervivencia 'Idol Inc'. Pero el negocio es duro y la competencia feroz. ¿Conseguirá escapar de la muerte?",
+        image: "images/fantasy/debut_or_die_1.jpg",
+        gallery: [
+            "images/fantasy/debut_or_die_1.jpg",
+            "images/fantasy/debut_or_die_2.jpg"
+        ]
+    },
 ];
 
 /*
