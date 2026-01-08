@@ -1,18 +1,38 @@
-// ESTADO 
-//let cart = []; // Ahora guardará objetos con propiedad 'qty'
+const SUPABASE_URL = 'https://dbuwvjulqepafaqghgbv.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_5IKv1NLLczrV96wPPF07dw_eSXtmdPu';
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// --- ESTADO ---
+let products = []; 
 let cart = JSON.parse(localStorage.getItem('yorusCart')) || [];
 let productModalInstance;
 let imageModalInstance;
 
-// INICIALIZACIÓN
-document.addEventListener('DOMContentLoaded', () => {
-    productModalInstance = new bootstrap.Modal(document.getElementById('productModal'));
-    imageModalInstance = new bootstrap.Modal(document.getElementById('imageModal'));
+// --- PETICIÓN DE DATOS ---
+async function fetchProducts() {
+    const { data, error } = await supabaseClient
+        .from('products')
+        .select('*');
+
+    if (error) {
+        console.error("Error loading products:", error);
+        return;
+    }
+
+    products = data;
 
     shuffleArray(products);
     renderFeatured();
     filterCatalog('all', document.querySelector('.active-filter'));
+}
+
+// --- INICIALIZACIÓN ---
+document.addEventListener('DOMContentLoaded', () => {
+    productModalInstance = new bootstrap.Modal(document.getElementById('productModal'));
+    imageModalInstance = new bootstrap.Modal(document.getElementById('imageModal'));
+
     updateCartUI();
+    fetchProducts();
 
     document.getElementById('searchInput').addEventListener('keyup', (e) => {
         const text = e.target.value.toLowerCase();
@@ -20,35 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//SISTEMA DE VISTAS 
-/*function showView(viewName, filterCategory = 'all') {
-    const homeView = document.getElementById('home-view');
-    const catalogView = document.getElementById('catalog-view');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    navLinks.forEach(link => link.classList.remove('active'));
-
-    if (viewName === 'home') {
-        homeView.classList.remove('d-none');
-        catalogView.classList.add('d-none');
-        document.querySelector('.nav-link[onclick="showView(\'home\')"]').classList.add('active');
-    } else if (viewName === 'catalog') {
-        homeView.classList.add('d-none');
-        catalogView.classList.remove('d-none');
-
-        if (filterCategory !== 'all') {
-            const btn = Array.from(document.querySelectorAll('#catalog-view button'))
-                .find(b => b.textContent.toLowerCase().includes(filterCategory));
-            filterCatalog(filterCategory, btn);
-        } else {
-            const btnAll = document.querySelector('#catalog-view button');
-            filterCatalog('all', btnAll);
-        }
-    }
-}*/
-
-// SISTEMA DE VISTAS
+// --- SISTEMA DE VISTAS ---
 function showView(viewName, filterCategory = 'all') {
     const homeView = document.getElementById('home-view');
     const catalogView = document.getElementById('catalog-view');
@@ -81,7 +73,7 @@ function showView(viewName, filterCategory = 'all') {
     }
 }
 
-// RENDERIZADO
+// --- RENDERIZADO ---
 function renderFeatured() {
     const grid = document.getElementById('featuredGrid');
     grid.innerHTML = '';
@@ -91,14 +83,14 @@ function renderFeatured() {
     });
 }
 
-// FILTRAR CATÁLOGO
 function filterCatalog(category, btnElement, filterValue = '') {
     const grid = document.getElementById('catalogGrid');
     grid.innerHTML = '';
 
     if (category === 'all' && !btnElement) {
-        btnElement = Array.from(document.querySelectorAll('#catalog-view button'))
+        const foundBtn = Array.from(document.querySelectorAll('#catalog-view button'))
             .find(b => b.textContent.trim() === 'Todo');
+        if (foundBtn) btnElement = foundBtn;
     }
 
     if (btnElement) {
@@ -110,28 +102,22 @@ function filterCatalog(category, btnElement, filterValue = '') {
             btn.classList.add('btn-outline-dark');
         });
 
-        // Activamos SOLO el que se presionó
         btnElement.classList.remove('btn-outline-dark');
         btnElement.classList.add('btn-dark', 'active-filter');
     }
 
-    // FILTRADO DE DATOS
     let filtered = products;
 
     if (category === 'search') {
-        // Filtro por Buscador
         filtered = products.filter(p => p.title.toLowerCase().includes(filterValue));
     } 
     else if (category === 'et_filt') {
-        // Filtro por Dropdown (usando et_filt)
         filtered = products.filter(p => p.et_filt && p.et_filt.toLowerCase().includes(filterValue.toLowerCase()));
     } 
     else if (category !== 'all') {
-        // Filtro por Categoría Principal
         filtered = products.filter(p => p.category === category);
     }
 
-    // 3. RENDERIZADO
     if (filtered.length === 0) {
         grid.innerHTML = '<div class="col-12 text-center py-5"><h3>No encontramos resultados para tu búsqueda :(</h3></div>';
     } else {
@@ -140,33 +126,6 @@ function filterCatalog(category, btnElement, filterValue = '') {
         });
     }
 }
-
-/*function createProductCard(prod) {
-    const col = document.createElement('div');
-    col.className = 'col-lg-3 col-md-6';
-    col.innerHTML = `
-        <div class="product-item position-relative bg-light d-flex flex-column text-center h-100 shadow-sm rounded-3 overflow-hidden">
-            <div class="product-img-wrap" onclick="openModal(${prod.id})" style="cursor: pointer;">
-            <span class="position-absolute top-0 end-0 badge badge-cute m-2">${prod.type}</span>
-                <img src="${prod.image}" alt="${prod.title}" style="width:100%; height:300px; object-fit:cover;">
-            </div>
-            <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                <div>
-                    <h6 class="text-secondary text-uppercase text-xs fw-bold">
-                        ${prod.genre} ${prod.language ? `<span class="text-muted mx-1">|</span> <span class="text-dark">${prod.language}</span>` : ''}
-                    </h6>
-                    <h5 class="mb-1 fw-bold text-dark">${prod.title}</h5>
-                    <small class="text-muted d-block mb-2">${prod.type}</small>
-                    <h4 class="text-danger fw-bold">$${prod.price.toFixed(2)}</h4>
-                </div>
-                <button class="btn btn-outline-dark rounded-pill mt-3 w-100" onclick="addToCart(${prod.id})">
-                    <i class="fas fa-plus me-1"></i> Añadir
-                </button>
-            </div>
-        </div>
-    `;
-    return col;
-}*/
 
 function createProductCard(prod) {
     const col = document.createElement('div');
@@ -199,7 +158,7 @@ function createProductCard(prod) {
     return col;
 }
 
-// MODALES 
+// --- MODALES ---
 function openModal(id) {
     const prod = products.find(p => p.id === id);
 
@@ -240,46 +199,12 @@ function openFullImage(src) {
     imageModalInstance.show();
 }
 
-// LÓGICA DEL CARRITO (NUEVA: CANTIDADES)
-
+// --- CARRITO ---
 const offcanvasCart = new bootstrap.Offcanvas(document.getElementById('cartOffcanvas'));
 
 function toggleCart() {
     offcanvasCart.toggle();
 }
-
-/*function addToCart(id) {
-    // Verificar si el producto ya existe en el carrito
-    const existingItem = cart.find(item => item.id === id);
-
-    if (existingItem) {
-        existingItem.qty++; // Si existe, aumentamos cantidad
-        // No mostramos alerta para no ser molestos al sumar
-    } else {
-        const prod = products.find(p => p.id === id);
-        // Agregamos al carrito con cantidad inicial 1
-        // Usamos {...prod} para crear una copia y no modificar el original
-        cart.push({ ...prod, qty: 1 });
-        alert(`¡${prod.title} se ha añadido al carrito!`);
-    }
-    updateCartUI();
-}
-
-// Nueva función para cambiar cantidades desde el carrito (+/-)
-function changeQty(index, change) {
-    if (cart[index].qty + change > 0) {
-        cart[index].qty += change;
-    } else {
-        // Si baja a 0, preguntamos o eliminamos directo. Aquí eliminamos.
-        cart.splice(index, 1);
-    }
-    updateCartUI();
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartUI();
-}*/
 
 function addToCart(id) {
     const existingItem = cart.find(item => item.id === id);
@@ -309,16 +234,18 @@ function changeQty(index, change) {
 
 function removeFromCart(index) {
     cart.splice(index, 1);
-    
     saveCartToStorage(); 
     updateCartUI();
 }
 
 function updateCartUI() {
     const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-    document.getElementById('cartCountBadge').innerText = totalItems;
+    const badge = document.getElementById('cartCountBadge');
+    if(badge) badge.innerText = totalItems;
 
     const container = document.getElementById('cartItemsContainer');
+    if(!container) return;
+    
     container.innerHTML = '';
 
     let total = 0;
@@ -352,7 +279,8 @@ function updateCartUI() {
             container.appendChild(itemRow);
         });
     }
-    document.getElementById('cartTotal').innerText = `$${total.toFixed(2)}`;
+    const totalElement = document.getElementById('cartTotal');
+    if(totalElement) totalElement.innerText = `$${total.toFixed(2)}`;
 }
 
 function checkoutInstagram() {
@@ -364,7 +292,6 @@ function checkoutInstagram() {
 
     cart.forEach(item => {
         const subtotal = item.price * item.qty;
-        // Formato: 2x Titulo (Tipo) - $Subtotal
         message += `▫️ ${item.qty}x ${item.title} (${item.type}) - $${subtotal.toFixed(2)}\n`;
         total += subtotal;
     });
@@ -378,15 +305,13 @@ function checkoutInstagram() {
     });
 }
 
-//  FUNCIÓN PARA GUARDAR EN MEMORIA 
 function saveCartToStorage() {
     localStorage.setItem('yorusCart', JSON.stringify(cart));
 }
 
-// FUNCIÓN PARA BARAJEAR SALIDAS
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Intercambia elementos
+        [array[i], array[j]] = [array[j], array[i]]; 
     }
 }
